@@ -1,8 +1,8 @@
 #include <unistd.h>
 
-void ft_putnbr(int nb)
+void	ft_putnbr(int nb)
 {
-	char digit;
+	char	digit;
 
 	if (nb <= 9)
 	{

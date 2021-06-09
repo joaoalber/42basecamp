@@ -1,11 +1,11 @@
 #include <unistd.h>
 
-void ft_writer(int first, int second);
+void	ft_writer(int first, int second);
 
 void	ft_print_comb2(void)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 0;
 	j = 0;
@@ -14,7 +14,6 @@ void	ft_print_comb2(void)
 		j = i + 1;
 		while (j <= 99)
 		{
-			
 			ft_writer((i / 10), (i % 10));
 			write(1, " ", 1);
 			ft_writer((j / 10), (j % 10));
@@ -26,10 +25,10 @@ void	ft_print_comb2(void)
 	}
 }
 
-void ft_writer(int first, int second)
+void	ft_writer(int first, int second)
 {
-	char first_number;
-	char second_number;
+	char	first_number;
+	char	second_number;
 
 	first_number = first + '0';
 	second_number = second + '0';
