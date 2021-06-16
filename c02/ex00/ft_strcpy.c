@@ -1,5 +1,8 @@
 char	*ft_strcpy(char *dest, char *src)
 {
+	char	*_dest;
+
+	_dest = dest;
 	while (*src)
 	{
 		*dest = *src;
@@ -7,5 +10,5 @@ char	*ft_strcpy(char *dest, char *src)
 		src++;
 	}
 	*dest = '\0';
-	return (dest);
+	return (_dest);
 }

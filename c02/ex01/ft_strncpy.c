@@ -1,7 +1,9 @@
 char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
 	unsigned int	index;
+	char			*_dest;
 
+	_dest = dest;
 	index = 0;
 	while (*src && index < n)
 	{
@@ -16,5 +18,5 @@ char	*ft_strncpy(char *dest, char *src, unsigned int n)
 		dest++;
 		index++;
 	}
-	return (dest);
+	return (_dest);
 }
