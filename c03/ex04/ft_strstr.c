@@ -5,6 +5,8 @@ char	*ft_strstr(char *str, char *to_find)
 	int	index;
 
 	index = 0;
+	if (!*to_find)
+		return (str);
 	while (*str)
 	{
 		if (str[index] == to_find[index])
