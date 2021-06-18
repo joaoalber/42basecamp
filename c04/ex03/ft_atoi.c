@@ -1,9 +1,9 @@
 #include <unistd.h>
-#include <stdio.h>
 
 int		convert_to_i(char *str);
 int		ft_strlen(char *str);
 int		ft_pow(int x, int y);
+int		has_invalid_space(char *str);
 
 int	ft_atoi(char *str)
 {
@@ -15,12 +15,14 @@ int	ft_atoi(char *str)
 	index = 0;
 	_str_index = 0;
 	minus_sign = 0;
+	if (has_invalid_space(str) == 1)
+		return (0);
 	while (str[index])
 	{
-		if (str[index] == '-')
-			minus_sign++;
 		while ((str[index] >= 48) && (str[index] <= 57))
 			_str[_str_index++] = str[index++];
+		if (str[index++] == '-')
+			minus_sign++;
 		if (_str_index > 0)
 		{
 			_str[_str_index] = '\0';
@@ -28,6 +30,23 @@ int	ft_atoi(char *str)
 				return (-1 * (convert_to_i(_str)));
 			return (convert_to_i(_str));
 		}
+	}
+	return (0);
+}
+
+int	has_invalid_space(char *str)
+{
+	int	signs;
+	int	index;
+
+	signs = 0;
+	index = 0;
+	while (str[index])
+	{
+		if (str[index] == '-' || str[index] == '+')
+			signs++;
+		if (str[index] <= 32 && signs > 0)
+			return (1);
 		index++;
 	}
 	return (0);
